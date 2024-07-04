@@ -19,12 +19,18 @@ const fetchPosts = () => {
 };
 
 const displayPosts = (posts) => {
-    const postList = document.getElementById('post-list');
-    postList.innerHTML = '';
+    let postList = document.getElementById('post-list');
+    postList.innerHTML = ''; // Limpiar contenido anterior
+
     posts.forEach(post => {
-        const listItem = document.createElement('li');
-        listItem.textContent = `Title: ${post.title}`;
-        postList.appendChild(listItem);
+        let row = `
+            <tr>
+                <th scope="row">${post.id}</th>
+                <td>${post.title}</td>
+                <td>${post.body}</td>
+            </tr>
+        `;
+        postList.innerHTML += row;
     });
 };
 
