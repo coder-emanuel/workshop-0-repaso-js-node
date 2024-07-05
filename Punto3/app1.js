@@ -25,7 +25,8 @@ const displayPosts = (posts) => {
     posts.forEach(post => {
         let row = `
             <tr>
-                <th scope="row">${post.id}</th>
+                <th scope="row">${post.userId}</th>
+                 <td>${post.id}</td>
                 <td>${post.title}</td>
                 <td>${post.body}</td>
             </tr>
