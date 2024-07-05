@@ -68,14 +68,14 @@ class TaskManager {
             item.className = task.completed ? 'completed' : '';
             item.addEventListener('click', () => this.toggleTaskComplete(task.id));
 
-            // const completeButton = document.createElement('button');
-            // completeButton.textContent = 'Completado';
-            // completeButton.addEventListener('click', (e) => {
-            //     e.stopPropagation();
-            //     this.completeTask(task.id);
-            // });
+            const completeButton = document.createElement('button');
+            completeButton.textContent = 'Completado';
+            completeButton.addEventListener('click', (e) => {
+                e.stopPropagation();
+                this.toggleTaskComplete(task.id);
+            });
 
-            // item.appendChild(completeButton);
+            item.appendChild(completeButton);
 
             const editButton = document.createElement('button');
             editButton.textContent = 'Editar';
