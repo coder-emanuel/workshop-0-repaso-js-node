@@ -70,6 +70,7 @@ class TaskManager {
 
             const completeButton = document.createElement('button');
             completeButton.textContent = 'Completado';
+            completeButton.className = 'complete-task';
             completeButton.addEventListener('click', (e) => {
                 e.stopPropagation();
                 this.toggleTaskComplete(task.id);
@@ -79,6 +80,7 @@ class TaskManager {
 
             const editButton = document.createElement('button');
             editButton.textContent = 'Editar';
+            editButton.className = 'edit-task';
             editButton.addEventListener('click', (e) => {
                 e.stopPropagation();
                 this.editTask(task.id);
@@ -89,6 +91,7 @@ class TaskManager {
 
             const deleteButton = document.createElement('button');
             deleteButton.textContent = 'Eliminar';
+            deleteButton.className = 'delete-task';
             deleteButton.addEventListener('click', (e) => {
                 e.stopPropagation(); // Evitar que el evento se propague al elemento padre, ¿Por qué? Porque el evento click en el botón también se propaga al elemento li.
                 this.deleteTask(task.id);
